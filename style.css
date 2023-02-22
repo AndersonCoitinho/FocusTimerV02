@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {}
+
+main {
+    width: 82.1rem;
+    height: 33.6rem;
+    margin: auto 26.6rem;
+
+
+    background-color: aqua;
+}
+
+.time {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12.6rem;
+    line-height: 14.8rem;
+    width: 38.3rem;
+    height: 11.7rem;
+
+    background-color: beige;
+}
+
+.buttonTime {
+    width: 31.2rem;
+    height: 4.8rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 40px;
+
+    background-color: blue;
+}
+
+.card {
+    position: absolute;
+    width: 13.8rem;
+    height: 15.2rem;
+    background: #E1E1E6;
+    border-radius: 24px;
+    
+}
