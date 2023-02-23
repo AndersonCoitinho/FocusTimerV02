@@ -5,10 +5,14 @@ const buttonmore = document.querySelector('.more')
 const buttondecrease = document.querySelector('.decrease')
 const minutesDisplay = document.querySelector('.minutes')
 const secondsDisplay = document.querySelector('.seconds')
+const select = document.querySelector('.card')
 let timerTimeOut
 let minutes = Number(minutesDisplay.textContent)
 let seconds = Number(secondsDisplay.textContent)
 const buttonForest = document.querySelector('.forest')
+const buttonRain = document.querySelector('.rain')
+const buttonCoffee = document.querySelector('.coffee')
+const buttonFire = document.querySelector('.fire')
 
 
 function updateDisplay(newMinutes, seconds) {
@@ -73,5 +77,28 @@ buttondecrease.addEventListener('click', function () {
 })
 
 buttonForest.addEventListener('click', function () {
-    console.log("aqui")
+    limpaSelect()
+    buttonForest.classList.add('select')
 })
+
+buttonRain.addEventListener('click', function () {
+    limpaSelect()
+    buttonRain.classList.add('select')
+})
+
+buttonCoffee.addEventListener('click', function () {
+    limpaSelect()
+    buttonCoffee.classList.add('select')
+})
+
+buttonFire.addEventListener('click', function () {
+    limpaSelect()
+    buttonFire.classList.add('select')
+})
+
+function limpaSelect () {
+    buttonForest.classList.remove('select')
+    buttonRain.classList.remove('select')
+    buttonCoffee.classList.remove('select')
+    buttonFire.classList.remove('select')
+}
