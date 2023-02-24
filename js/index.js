@@ -5,10 +5,19 @@ const buttonmore = document.querySelector('.more')
 const buttondecrease = document.querySelector('.decrease')
 const minutesDisplay = document.querySelector('.minutes')
 const secondsDisplay = document.querySelector('.seconds')
+const select = document.querySelector('.card')
 let timerTimeOut
 let minutes = Number(minutesDisplay.textContent)
 let seconds = Number(secondsDisplay.textContent)
 const buttonForest = document.querySelector('.forest')
+const buttonRain = document.querySelector('.rain')
+const buttonCoffee = document.querySelector('.coffee')
+const buttonFire = document.querySelector('.fire')
+
+const AudioForest = new Audio("./sons/forest.wav")
+const AudioFire = new Audio("./sons/fire.wav")
+const AudioRain = new Audio("./sons/rain.wav")
+const AudioCoffer = new Audio("./sons/coffee.wav")
 
 
 function updateDisplay(newMinutes, seconds) {
@@ -25,6 +34,20 @@ function reset() {
 
 function hold() {
     clearTimeout(timerTimeOut)
+}
+
+function limpaSelect () {
+    buttonForest.classList.remove('select')
+    buttonRain.classList.remove('select')
+    buttonCoffee.classList.remove('select')
+    buttonFire.classList.remove('select')
+}
+
+function limpaSons () {
+    AudioForest.pause()
+    AudioRain.pause()
+    AudioCoffer.pause()
+    AudioFire.pause()
 }
 
 
@@ -73,5 +96,31 @@ buttondecrease.addEventListener('click', function () {
 })
 
 buttonForest.addEventListener('click', function () {
-    console.log("aqui")
+    limpaSelect()
+    buttonForest.classList.add('select')
+    limpaSons ()
+    AudioForest.play()
+    
 })
+
+buttonRain.addEventListener('click', function () {
+    limpaSelect()
+    buttonRain.classList.add('select')
+    limpaSons ()
+    AudioRain.play()
+})
+
+buttonCoffee.addEventListener('click', function () {
+    limpaSelect()
+    buttonCoffee.classList.add('select')
+    limpaSons ()
+    AudioCoffer.play()
+})
+
+buttonFire.addEventListener('click', function () {
+    limpaSelect()
+    buttonFire.classList.add('select')
+    limpaSons ()
+    AudioFire.play()
+})
+

@@ -11,7 +11,7 @@
 main {
     width: 82.1rem;
     height: 38.6rem;
-    margin: 12rem 26.6rem;
+    margin: 12rem auto;
     display: flex;
     gap: 19.2rem;
 }
@@ -49,8 +49,20 @@ main {
     height: 15.2rem;
     background: #E1E1E6;
     border-radius: 24px;
+    
+}
+
+.card img {
+    margin: 4.5rem;
 }
 
 .select {
     background-color: #02799D;
+}
+
+@media (max-width: 700px) {
+    main {
+        display: grid;
+        margin: 3rem 18rem;
+    }
 }
