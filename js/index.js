@@ -1,4 +1,3 @@
-
 const buttonplay = document.querySelector('.play')
 const buttonstop = document.querySelector('.stop')
 const buttonmore = document.querySelector('.more')
@@ -84,6 +83,7 @@ buttonstop.addEventListener('click', function () {
 })
 
 buttonmore.addEventListener('click', function () {
+    console.log()
     minutes += 5
     updateDisplay(minutes, seconds)
 })
