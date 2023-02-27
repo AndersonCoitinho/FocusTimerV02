@@ -18,6 +18,17 @@ const AudioFire = new Audio("./sons/fire.wav")
 const AudioRain = new Audio("./sons/rain.wav")
 const AudioCoffer = new Audio("./sons/coffee.wav")
 
+const buttonLight = document.querySelector('.light')
+const buttonDark = document.querySelector('.dark')
+
+const ModelBody = document.querySelector('body')
+
+const buttonplayDark = document.querySelector('.playDark')
+const buttonstopDark = document.querySelector('.stopDark')
+const buttonmoreDark = document.querySelector('.moreDark')
+const buttondecreaseDark = document.querySelector('.decreaseDark')
+
+
 
 function updateDisplay(newMinutes, seconds) {
     newMinutes = newMinutes === undefined ? minutes : newMinutes
@@ -74,9 +85,11 @@ function countDown() {
     }, 1000)
 }
 
+
 buttonplay.addEventListener('click', function () {
     countDown()
 })
+
 
 buttonstop.addEventListener('click', function () {
     reset()
@@ -95,8 +108,38 @@ buttondecrease.addEventListener('click', function () {
     }
 })
 
+
+
+
+
+buttonplayDark.addEventListener('click', function () {
+    countDown()
+})
+
+buttonstopDark.addEventListener('click', function () {
+    reset()
+})
+
+buttonmoreDark.addEventListener('click', function () {
+    console.log()
+    minutes += 5
+    updateDisplay(minutes, seconds)
+})
+
+buttondecreaseDark.addEventListener('click', function () {
+    if (minutes != 0) {
+        minutes -= 5
+        updateDisplay(minutes, seconds)
+    }
+})
+
+
+
+
+
 buttonForest.addEventListener('click', function () {
     limpaSelect()
+
     buttonForest.classList.add('select')
     limpaSons ()
     AudioForest.play()
@@ -123,4 +166,45 @@ buttonFire.addEventListener('click', function () {
     limpaSons ()
     AudioFire.play()
 })
+
+buttonLight.addEventListener('click', function () {
+    buttonLight.classList.add('hide')
+    buttonDark.classList.remove('hide')
+    ModelBody.classList.add('Modeldark')
+    buttonplay.classList.toggle('hide')
+    buttonplayDark.classList.toggle('hide')
+    buttonstop.classList.toggle('hide')
+    buttonstopDark.classList.toggle('hide')
+    buttonmore.classList.toggle('hide')
+    buttonmoreDark.classList.toggle('hide')
+    buttondecrease.classList.toggle('hide')
+    buttondecreaseDark.classList.toggle('hide')
+
+    buttonCoffee.classList.add('cardBlack')
+    buttonFire.classList.add('cardBlack')
+    buttonForest.classList.add('cardBlack')
+    buttonRain.classList.add('cardBlack')
+})
+
+
+buttonDark.addEventListener('click', function () {
+    buttonLight.classList.remove('hide')
+    buttonDark.classList.add('hide')
+    ModelBody.classList.remove('Modeldark')
+    buttonplay.classList.toggle('hide')
+    buttonplayDark.classList.toggle('hide')
+    buttonstop.classList.toggle('hide')
+    buttonstopDark.classList.toggle('hide')
+    buttonmore.classList.toggle('hide')
+    buttonmoreDark.classList.toggle('hide')
+    buttondecrease.classList.toggle('hide')
+    buttondecreaseDark.classList.toggle('hide')
+
+    buttonCoffee.classList.remove('cardBlack')
+    buttonFire.classList.remove('cardBlack')
+    buttonForest.classList.remove('cardBlack')
+    buttonRain.classList.remove('cardBlack')
+})
+
+
 

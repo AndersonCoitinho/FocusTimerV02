@@ -16,6 +16,11 @@ main {
     gap: 19.2rem;
 }
 
+.Modeldark {
+    background-color: #121214;
+    color: #FFF;
+}
+
 .time {
     font-family: 'Roboto', sans-serif;
     font-size: 12.6rem;
@@ -60,6 +65,17 @@ main {
     background-color: #02799D;
 }
 
+
+.cardBlack {
+    background-color: #29292E;
+}
+
+.selectDark {
+    background-color: #0A3442;
+}
+
+
+
 @media (max-width: 700px) {
     main {
         display: grid;
@@ -67,7 +83,14 @@ main {
     }
 }
 
+.mode {
+    width: 4.4rem;
+    height: 4.4rem;
+}
 
+.hide {
+    display: none;
+}
 
 
 
